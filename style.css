@@ -257,3 +257,60 @@ body {
   .cv-grid { grid-template-columns: 1fr; }
   .cv-header { flex-direction: column; text-align: center; }
 }
+
+.btn-row {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-row button[type="submit"] {
+  flex: 1;
+}
+
+.btn-row button[type="reset"] {
+  flex: 1;
+  background: transparent;
+  border: 1.5px solid var(--border);
+  padding: 14px 36px;
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+}
+
+.btn-row button[type="reset"]:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+nav {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 20px 24px;
+  font-size: .95rem;
+}
+
+nav a {
+  color: var(--ink);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color .2s;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+.checkbox-group input[type="radio"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  padding: 0;
+  margin-bottom: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
