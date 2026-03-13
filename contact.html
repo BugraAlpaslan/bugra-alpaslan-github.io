@@ -1,13 +1,21 @@
 <!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV – İletişim Formu</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
 <body>
-    <nav>
-        <a href="index.html">Ana Sayfa</a> | 
-        <a href="about.html">Hakkımda</a> | 
-        <a href="interests.html">İlgi Alanlarım</a> | 
-        <a href="contact.html">İletişim</a>
-    </nav>
 
-    
+  <nav>
+    <a href="index.html">Ana Sayfa</a> | 
+    <a href="about.html">Hakkımda</a> | 
+    <a href="interests.html">İlgi Alanlarım</a> | 
+    <a href="contact.html">İletişim</a>
+  </nav>
+
   <div class="cv-wrapper">
     <div class="cv-header">
       <div class="avatar">BA</div>
@@ -16,7 +24,7 @@
         <div class="cv-title">Computer Engineering Student &amp; Cybersecurity Enthusiast</div>
       </div>
     </div>
- 
+
     <div class="cv-section">
       <h2>Deneyim</h2>
       <div class="cv-grid">
@@ -38,7 +46,7 @@
         </div>
       </div>
     </div>
- 
+
     <div class="cv-section">
       <h2>Eğitim</h2>
       <div class="cv-grid">
@@ -48,7 +56,7 @@
         </div>
       </div>
     </div>
- 
+
     <div class="cv-section">
       <h2>Beceriler</h2>
       <div class="skills-list">
@@ -63,20 +71,20 @@
       </div>
     </div>
   </div>
- 
+
   <div class="contact-section">
     <h2>İletişim</h2>
- 
+
     <div class="contact-container">
- 
+
       <form action="#" method="post">
- 
+
         <label for="fullname">Ad Soyad</label>
         <input type="text" id="fullname" name="fullname" placeholder="Adınız Soyadınız" required>
- 
+
         <label for="email">E-posta</label>
         <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
- 
+
         <label for="konu">Konu</label>
         <select id="konu" name="konu" required>
           <option value="" disabled selected>Bir konu seçin…</option>
@@ -84,10 +92,10 @@
           <option value="soru">Soru</option>
           <option value="geri-bildirim">Geri Bildirim</option>
         </select>
- 
+
         <label for="mesaj">Mesaj</label>
         <textarea id="mesaj" name="mesaj" placeholder="Mesajınızı buraya yazın…" required></textarea>
- 
+
         <span class="checkbox-group-label">İlgilenilen Alanlar</span>
         <div class="checkbox-group">
           <label><input type="checkbox" name="alan" value="siber-guvenlik"> Siber Güvenlik</label>
@@ -96,16 +104,18 @@
           <label><input type="checkbox" name="alan" value="yazilim-gelistirme"> Yazılım Geliştirme</label>
           <label><input type="checkbox" name="alan" value="staj"> Staj Teklifi</label>
         </div>
- 
+
         <input type="file" id="cv-upload" name="cv" accept=".pdf,.doc,.docx" style="display:none">
         <label for="cv-upload" class="upload-btn">📎 CV Yükle</label>
- 
-        <button type="submit">Gönder</button>
- 
+
+        <div class="btn-row">
+          <button type="submit">Gönder</button>
+          <button type="reset">Temizle</button>
+        </div>
+
       </form>
     </div>
   </div>
- 
-</body>
 
+</body>
 </html>
