@@ -1,0 +1,259 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #f4f1ec;
+  --ink: #1a1a1a;
+  --muted: #6b6560;
+  --accent: #c0392b;
+  --border: #d4cec7;
+  --card: #ffffff;
+  --radius: 12px;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+.cv-wrapper {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 60px 24px 0;
+}
+
+.cv-header {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 48px;
+  padding-bottom: 32px;
+  border-bottom: 2px solid var(--border);
+}
+
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'DM Serif Display', serif;
+  font-size: 2rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.cv-name {
+  font-family: 'DM Serif Display', serif;
+  font-size: 2.4rem;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.cv-title {
+  color: var(--accent);
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.cv-section {
+  margin-bottom: 36px;
+}
+
+.cv-section h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.3rem;
+  margin-bottom: 14px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid var(--border);
+}
+
+.cv-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.cv-item {
+  background: var(--card);
+  border-radius: var(--radius);
+  padding: 16px 20px;
+  border: 1px solid var(--border);
+}
+
+.cv-item strong { display: block; font-weight: 600; margin-bottom: 2px; }
+.cv-item span { font-size: .9rem; color: var(--muted); }
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background: var(--ink);
+  color: #fff;
+  font-size: .8rem;
+  font-weight: 500;
+  padding: 5px 14px;
+  border-radius: 99px;
+  letter-spacing: .03em;
+}
+
+.contact-section {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
+}
+
+.contact-section > h2 {
+  font-family: 'DM Serif Display', serif;
+  font-size: 1.8rem;
+  margin-bottom: 28px;
+}
+
+.contact-container {
+  width: 600px;
+  margin: 0 auto;
+  padding: 40px;
+  border: 1.5px solid var(--border);
+  border-radius: 16px;
+  background: var(--card);
+  box-shadow: 0 4px 24px rgba(0,0,0,.06);
+}
+
+.contact-container label {
+  display: block;
+  font-weight: 500;
+  font-size: .88rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 6px;
+}
+
+.contact-container input,
+.contact-container select,
+.contact-container textarea {
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 1.5px solid var(--border);
+  border-radius: 8px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .95rem;
+  color: var(--ink);
+  background: var(--bg);
+  transition: border-color .2s, box-shadow .2s;
+  outline: none;
+}
+
+.contact-container input:focus,
+.contact-container select:focus,
+.contact-container textarea:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(192,57,43,.12);
+}
+
+.contact-container textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.upload-btn {
+  display: block;
+  width: 100%;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  border: 1.5px dashed var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--muted);
+  font-family: 'DM Sans', sans-serif;
+  font-size: .95rem;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color .2s, color .2s;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.upload-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.contact-container button[type="submit"] {
+  background: var(--accent);
+  border: none;
+  padding: 14px 36px;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+  font-size: .95rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background .2s, transform .15s;
+  display: block;
+  width: 100%;
+}
+
+.contact-container button[type="submit"]:hover {
+  background: #a93226;
+  transform: translateY(-1px);
+}
+
+.checkbox-group {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.checkbox-group label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: .95rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
+  color: var(--ink);
+  cursor: pointer;
+  margin-bottom: 0;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  min-width: 18px;
+  padding: 0;
+  margin-bottom: 0;
+  accent-color: var(--accent);
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.checkbox-group-label {
+  display: block;
+  font-weight: 500;
+  font-size: .88rem;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+@media (max-width: 680px) {
+  .contact-container { width: 100%; padding: 24px; }
+  .cv-grid { grid-template-columns: 1fr; }
+  .cv-header { flex-direction: column; text-align: center; }
+}
