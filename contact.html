@@ -7,13 +7,105 @@
         <a href="contact.html">İletişim</a>
     </nav>
 
-    <main>
-        <h1>İletişim</h1>
-        <p>E-posta: <a href="mailto:bugraalpaslann@gmail.com">bugraalpaslann@gmail.com</a></p>
-        <p>GitHub: <a href="https://github.com/BugraAlpaslan" target="_blank">Profilimi Gör</a></p>
-        <p>533 387 0641</p>
-        <p><a href="https://tr.linkedin.com/in/bugraalpaslan">https://tr.linkedin.com/in/bugraalpaslan</a></p>
-
-    </main>
+    
+  <div class="cv-wrapper">
+    <div class="cv-header">
+      <div class="avatar">BA</div>
+      <div>
+        <div class="cv-name">Buğra Alpaslan</div>
+        <div class="cv-title">Computer Engineering Student &amp; Cybersecurity Enthusiast</div>
+      </div>
+    </div>
+ 
+    <div class="cv-section">
+      <h2>Deneyim</h2>
+      <div class="cv-grid">
+        <div class="cv-item">
+          <strong>CTF Yarışmacısı</strong>
+          <span>HackTheBox, TryHackMe — 2023–Günümüz</span>
+        </div>
+        <div class="cv-item">
+          <strong>Kişisel Güvenlik &amp; Sistem Projeleri</strong>
+          <span>Low-level sistemler, ağ güvenliği — 2023–Günümüz</span>
+        </div>
+        <div class="cv-item">
+          <strong>SOC Analyst — Koçsistem</strong>
+          <span>Güvenlik Operasyon Merkezi — 2024</span>
+        </div>
+        <div class="cv-item">
+          <strong>Stajyer — Motherson</strong>
+          <span>Yazılım &amp; Sistem Destek — 2024</span>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="cv-section">
+      <h2>Eğitim</h2>
+      <div class="cv-grid">
+        <div class="cv-item">
+          <strong>Bilgisayar Mühendisliği (3. Sınıf)</strong>
+          <span>Marmara Üniversitesi — 2022–Günümüz</span>
+        </div>
+      </div>
+    </div>
+ 
+    <div class="cv-section">
+      <h2>Beceriler</h2>
+      <div class="skills-list">
+        <span class="skill-tag">C / C++</span>
+        <span class="skill-tag">Python</span>
+        <span class="skill-tag">HTML &amp; CSS</span>
+        <span class="skill-tag">Linux</span>
+        <span class="skill-tag">Siber Güvenlik</span>
+        <span class="skill-tag">Ağ Güvenliği</span>
+        <span class="skill-tag">Simracing</span>
+        <span class="skill-tag">Git</span>
+      </div>
+    </div>
+  </div>
+ 
+  <div class="contact-section">
+    <h2>İletişim</h2>
+ 
+    <div class="contact-container">
+ 
+      <form action="#" method="post">
+ 
+        <label for="fullname">Ad Soyad</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Adınız Soyadınız" required>
+ 
+        <label for="email">E-posta</label>
+        <input type="email" id="email" name="email" placeholder="ornek@mail.com" required>
+ 
+        <label for="konu">Konu</label>
+        <select id="konu" name="konu" required>
+          <option value="" disabled selected>Bir konu seçin…</option>
+          <option value="is-teklifi">İş Teklifi</option>
+          <option value="soru">Soru</option>
+          <option value="geri-bildirim">Geri Bildirim</option>
+        </select>
+ 
+        <label for="mesaj">Mesaj</label>
+        <textarea id="mesaj" name="mesaj" placeholder="Mesajınızı buraya yazın…" required></textarea>
+ 
+        <span class="checkbox-group-label">İlgilenilen Alanlar</span>
+        <div class="checkbox-group">
+          <label><input type="checkbox" name="alan" value="siber-guvenlik"> Siber Güvenlik</label>
+          <label><input type="checkbox" name="alan" value="ag-guvenligi"> Ağ Güvenliği</label>
+          <label><input type="checkbox" name="alan" value="low-level"> Low-level Sistemler</label>
+          <label><input type="checkbox" name="alan" value="yazilim-gelistirme"> Yazılım Geliştirme</label>
+          <label><input type="checkbox" name="alan" value="staj"> Staj Teklifi</label>
+        </div>
+ 
+        <input type="file" id="cv-upload" name="cv" accept=".pdf,.doc,.docx" style="display:none">
+        <label for="cv-upload" class="upload-btn">📎 CV Yükle</label>
+ 
+        <button type="submit">Gönder</button>
+ 
+      </form>
+    </div>
+  </div>
+ 
 </body>
+
 </html>
