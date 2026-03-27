@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flexbox Lab</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ANA WRAPPER -->
+  <div class="wrapper">
+
+    <!-- 1) NAVBAR -->
+    <nav class="navbar">
+      <div class="logo">LOGO</div>
+      <ul class="nav-links">
+        <li><a href="#">Ana Sayfa</a></li>
+        <li><a href="#">Hakkında</a></li>
+        <li><a href="#">Dersler</a></li>
+        <li><a href="#">İletişim</a></li>
+      </ul>
+    </nav>
+
+    <!-- 2) HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>Hero Başlık</h1>
+        <p>Açıklama metni buraya gelecek. Kısa ve öz bir tanıtım cümlesi.</p>
+        <button class="btn btn-primary">Buton</button>
+      </div>
+      <div class="hero-image">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 140" width="160" height="110">
+          <rect width="200" height="140" fill="#e2e8f0" rx="8"/>
+          <circle cx="140" cy="45" r="20" fill="#94a3b8"/>
+          <polygon points="30,120 100,60 160,120" fill="#b0bec5"/>
+        </svg>
+      </div>
+    </section>
+
+    <!-- 3) KARTLAR -->
+    <section class="cards-section">
+      <div class="cards-header">
+        <h2>Kartlar Bölümü</h2>
+      </div>
+      <div class="cards-container">
+        <div class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn btn-card">Buton</button>
+        </div>
+        <div class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn btn-card">Buton</button>
+        </div>
+        <div class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn btn-card">Buton</button>
+        </div>
+        <div class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn btn-card">Buton</button>
+        </div>
+        <div class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn btn-card">Buton</button>
+        </div>
+        <div class="card">
+          <h3>Kart Başlığı</h3>
+          <p>Kısa açıklama</p>
+          <button class="btn btn-card">Buton</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4) FLEX GROW -->
+    <section class="flexgrow-section">
+      <h2>Flex Grow Uygulama</h2>
+      <div class="flexgrow-container">
+        <div class="box box1">
+          <strong>1 Kutu</strong>
+          <span>flex-grow: 1</span>
+          <button class="btn btn-box1">Buton</button>
+        </div>
+        <div class="box box2">
+          <strong>2 Kutu</strong>
+          <span>flex-grow: 2</span>
+          <button class="btn btn-box2">Buton</button>
+        </div>
+        <div class="box box3">
+          <strong>3 Kutu</strong>
+          <span>flex-grow: 1</span>
+          <button class="btn btn-box3">Buton</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5) FOOTER -->
+    <footer class="footer">
+      <p>© 2026 - Temel Flexbox Örneği</p>
+    </footer>
+
+  </div><!-- /wrapper -->
+
+</body>
+</html>
