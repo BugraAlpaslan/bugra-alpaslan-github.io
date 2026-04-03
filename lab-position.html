@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kampüs Etkinliği — Position Lab</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      background: #0b0f1a;
+      color: #e2e8f0;
+      min-height: 200vh;
+      overflow-x: hidden;
+    }
+
+    /* ==================== SAYFA BAŞLIĞI ==================== */
+    .page-header {
+      text-align: center;
+      padding: 28px 16px 12px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      font-size: .82rem;
+      color: #64748b;
+    }
+    .page-header span { color: #38bdf8; }
+
+    /* ==================== FIXED: Geri Dön ==================== */
+    .back-btn {
+      position: fixed;
+      top: 16px;
+      left: 16px;
+      z-index: 100;
+      padding: 9px 16px;
+      border-radius: 10px;
+      background: rgba(15,23,42,.92);
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      font-size: .78rem;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .25s, border-color .25s, transform .2s;
+    }
+    .back-btn:hover {
+      background: #1e3a5f;
+      border-color: #38bdf8;
+      transform: translateY(-2px);
+      cursor: pointer;
+    }
+    .back-btn:active { transform: translateY(0); }
+
+    /* ==================== FIXED: Yardımcı Menü ==================== */
+    .side-menu {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 100;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .side-menu a {
+      display: block;
+      padding: 8px 14px;
+      border-radius: 10px;
+      background: rgba(15,23,42,.92);
+      border: 1px solid #334155;
+      color: #94a3b8;
+      font-size: .74rem;
+      text-decoration: none;
+      text-align: center;
+      cursor: pointer;
+      transition: background .25s, border-color .25s, color .25s, transform .2s;
+    }
+    .side-menu a:hover {
+      background: #1e3a5f;
+      border-color: #38bdf8;
+      color: #e2e8f0;
+      transform: translateY(-2px);
+      cursor: pointer;
+    }
+
+    /* ==================== KART KAPSAYICI: relative ==================== */
+    .card-outer {
+      position: relative;
+      max-width: 1000px;
+      margin: 16px auto 0;
+      padding: 0 16px;
+    }
+
+    /* ==================== ANA KART ==================== */
+    .card {
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      gap: 32px;
+      background: linear-gradient(160deg, #111827, #1e293b 60%);
+      border: 1px solid #1e3a5f;
+      border-radius: 20px;
+      padding: 36px 32px 32px;
+      box-shadow: 0 0 60px rgba(56,189,248,.08);
+      overflow: visible;
+    }
+
+    /* Dekoratif glow — z-index:0 */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -50px;
+      right: -30px;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(56,189,248,.18), transparent 65%);
+      z-index: 0;
+    }
+
+    /* ==================== SOL: İçerik ==================== */
+    .card-content {
+      flex: 1;
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: .72rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: #94a3b8;
+    }
+    .live-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 10px rgba(34,197,94,.8);
+      animation: pulse 1.4s infinite;
+    }
+    @keyframes pulse {
+      0%,100% { transform: scale(1); opacity: 1; }
+      50%     { transform: scale(1.5); opacity: .4; }
+    }
+
+    .card-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      line-height: 1.25;
+      color: #f1f5f9;
+    }
+
+    .card-desc {
+      font-size: .88rem;
+      color: #94a3b8;
+      line-height: 1.55;
+      max-width: 440px;
+    }
+
+    .card-list {
+      margin-top: 4px;
+      padding-left: 18px;
+      font-size: .82rem;
+      color: #a5b4fc;
+      line-height: 1.7;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 10px 22px;
+      border-radius: 10px;
+      background: #38bdf8;
+      color: #0c1524;
+      font-size: .82rem;
+      font-weight: 700;
+      text-decoration: none;
+      cursor: pointer;
+      box-shadow: 0 6px 24px rgba(56,189,248,.4);
+      transition: background .2s, transform .2s, box-shadow .2s;
+      align-self: flex-start;
+    }
+    .cta-btn:hover {
+      background: #0ea5e9;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 32px rgba(56,189,248,.55);
+      cursor: pointer;
+    }
+    .cta-btn:active {
+      transform: translateY(0);
+      box-shadow: 0 4px 16px rgba(56,189,248,.3);
+    }
+
+    /* ==================== SAĞ: Rozet + Durum Paneli ==================== */
+    .card-sidebar {
+      position: relative;
+      z-index: 2;
+      width: 260px;
+      flex-shrink: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    /* --- Absolute rozetler (3 adet, kapsayıcı relative) --- */
+    .badge-stack {
+      position: relative;
+      width: 100%;
+      height: 130px;
+    }
+
+    .badge {
+      position: absolute;
+      right: 0;
+      padding: 7px 14px;
+      border-radius: 10px;
+      font-size: .76rem;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: transform .2s, box-shadow .2s;
+    }
+    .badge:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.5);
+      cursor: grab;
+    }
+
+    .badge-date {
+      top: 0;
+      background: #1e293b;
+      border: 1px solid #475569;
+      color: #e2e8f0;
+      z-index: 3;
+    }
+    .badge-register {
+      top: 44px;
+      background: #0369a1;
+      border: 1px solid #7dd3fc;
+      color: #e0f2fe;
+      z-index: 2;
+    }
+    .badge-location {
+      top: 88px;
+      background: #312e81;
+      border: 1px solid #a5b4fc;
+      color: #e0e7ff;
+      z-index: 1;
+    }
+
+    /* --- Durum paneli --- */
+    .status-box {
+      width: 100%;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(15,23,42,.75);
+      border: 1px solid #334155;
+      backdrop-filter: blur(8px);
+    }
+    .status-box:hover { cursor: pointer; }
+    .status-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 5px;
+      font-size: .78rem;
+    }
+    .status-label {
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      font-size: .68rem;
+    }
+    .status-val { font-weight: 600; color: #e2e8f0; }
+    .status-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: .68rem;
+      background: rgba(34,197,94,.12);
+      color: #22c55e;
+      border: 1px solid rgba(34,197,94,.25);
+    }
+    .chip-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: currentColor;
+    }
+
+    /* --- Ücretsiz & Sertifikalı — zıplayan rozet --- */
+    .free-tag {
+      width: 100%;
+      padding: 9px 14px;
+      border-radius: 10px;
+      background: #166534;
+      border: 1px solid #86efac;
+      color: #ecfdf5;
+      font-size: .8rem;
+      font-weight: 700;
+      text-align: center;
+      cursor: pointer;
+      animation: bounce 1s ease-in-out infinite;
+      transition: background .2s;
+    }
+    .free-tag:hover { background: #15803d; cursor: cell; }
+
+    @keyframes bounce {
+      0%,100% { transform: translateY(0); }
+      50%     { transform: translateY(-8px); }
+    }
+
+    /* ==================== Overlay badge (z-index) ==================== */
+    .overlay-tag {
+      position: absolute;
+      bottom: 16px;
+      left: 28px;
+      z-index: 10;
+      padding: 5px 12px;
+      border-radius: 8px;
+      background: rgba(15,23,42,.95);
+      border: 1px solid #475569;
+      font-size: .7rem;
+      color: #94a3b8;
+      cursor: pointer;
+      transition: background .2s, transform .2s;
+    }
+    .overlay-tag:hover {
+      background: #1e3a5f;
+      transform: translateY(-2px);
+      cursor: crosshair;
+    }
+    .overlay-tag strong { color: #e2e8f0; margin-left: 6px; }
+
+    /* ==================== FOOTER ==================== */
+    footer {
+      text-align: center;
+      padding: 32px 16px 40px;
+      font-size: .78rem;
+      color: #475569;
+    }
+    footer a {
+      color: #64748b;
+      text-decoration: none;
+      border-bottom: 1px dashed #475569;
+      cursor: pointer;
+      transition: color .2s, border-color .2s;
+    }
+    footer a:hover { color: #e2e8f0; border-color: #e2e8f0; cursor: pointer; }
+
+    /* ==================== MOBİL ==================== */
+    @media (max-width: 720px) {
+      body { padding-top: 56px; }
+      .card {
+        flex-direction: column;
+        padding: 24px 18px;
+      }
+      .card-sidebar { width: 100%; align-items: stretch; }
+      .badge-stack { height: 130px; }
+      .side-menu {
+        top: auto; bottom: 12px; right: 12px; left: 12px;
+        flex-direction: row; justify-content: center;
+      }
+      .side-menu a { flex: 1; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FIXED: Geri dön butonu -->
+  <a href="index.html" class="back-btn">← Ana Sayfa</a>
+
+  <!-- FIXED: Yardımcı menü -->
+  <nav class="side-menu">
+    <a href="#durum">Kayıt</a>
+    <a href="#detay">Detaylar</a>
+    <a href="#footer">Alt Bilgi</a>
+  </nav>
+
+  <!-- Sayfa başlığı -->
+  <div class="page-header">
+    Marmara Üniversitesi · <span>Siber Güvenlik Topluluğu</span>
+  </div>
+
+  <!-- RELATIVE kapsayıcı -->
+  <div class="card-outer">
+    <article class="card">
+
+      <!-- SOL: İçerik -->
+      <div class="card-content" id="detay">
+        <div class="live-badge">
+          <span class="live-dot"></span>
+          Canlı Atölye · Blue Team
+        </div>
+
+        <h1 class="card-title">Gece Vardiyasında SOC:<br>Gerçek Vaka Analizi</h1>
+
+        <p class="card-desc">
+          Kısa ve uygulamalı bir SOC gecesi: gerçek loglardan saldırı izi okuma
+          ve SIEM panelinde olay inceleme.
+        </p>
+
+        <ul class="card-list">
+          <li>Uygulamalı log inceleme</li>
+          <li>SIEM kural mantığına giriş</li>
+          <li>Mini vaka çözümü</li>
+        </ul>
+
+        <a href="#durum" class="cta-btn">Hemen Ön Kayıt ↗</a>
+      </div>
+
+      <!-- SAĞ: Rozetler + Durum + Ücretsiz -->
+      <div class="card-sidebar">
+
+        <!-- 3 absolute rozet (kendi relative kapsayıcısında) -->
+        <div class="badge-stack">
+          <div class="badge badge-date">📅 27 Nisan · 19:00</div>
+          <div class="badge badge-register">📝 Ön Kayıt Açık</div>
+          <div class="badge badge-location">📍 Göztepe Kampüsü – B Blok</div>
+        </div>
+
+        <!-- Durum paneli -->
+        <div class="status-box" id="durum">
+          <div class="status-row">
+            <span class="status-label">Durum</span>
+            <span class="status-chip"><span class="chip-dot"></span> Kayıtlar Açık</span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">Kontenjan</span>
+            <span class="status-val">40 Katılımcı</span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">Düzey</span>
+            <span class="status-val">Giriş / Orta</span>
+          </div>
+          <div class="status-row">
+            <span class="status-label">Dil</span>
+            <span class="status-val">Türkçe</span>
+          </div>
+        </div>
+
+        <!-- Ücretsiz & Sertifikalı — durum kartının altında, zıplıyor -->
+        <div class="free-tag">★ Ücretsiz &amp; Sertifikalı</div>
+      </div>
+
+      <!-- z-index overlay etiketi — sol alt -->
+      <div class="overlay-tag">
+        LIVE<strong>#SOC Nights</strong>
+      </div>
+
+    </article>
+  </div>
+
+  <footer id="footer">
+    Web Lab Hafta 5 – CSS <code>position</code> ödevi ·
+    <a href="index.html">Ana sayfaya dön</a>
+  </footer>
+
+</body>
+</html>
