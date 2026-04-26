@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafta 6 Uygulama 2 - Birim Donusturucu</title>
+    <style>
+        :root {
+            --bg: #f4f1ec;
+            --card: #ffffff;
+            --ink: #1a1a1a;
+            --muted: #6b6560;
+            --accent: #c0392b;
+            --border: #d4cec7;
+        }
+
+        * { box-sizing: border-box; }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: var(--bg);
+            color: var(--ink);
+        }
+
+        .page {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 16px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin: 10px 0 6px;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 15px;
+        }
+
+        button {
+            margin-top: 12px;
+            background: var(--accent);
+            color: #fff;
+            border: none;
+            cursor: pointer;
+            font-weight: 700;
+        }
+
+        .result {
+            margin-top: 12px;
+            padding: 10px;
+            border-radius: 8px;
+            background: #f8f8f8;
+            border: 1px solid var(--border);
+            color: var(--muted);
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <main class="page">
+        <a class="back-link" href="index.html">← Ana Sayfaya Don</a>
+        <h1>Hafta 6 Uygulama 2</h1>
+        <section class="card">
+            <h2>Birim Donusturucu (Sicaklik)</h2>
+            <p>Celsius, Fahrenheit ve Kelvin birimleri arasinda donusum yapar.</p>
+
+            <label for="deger">Deger</label>
+            <input type="text" id="deger" placeholder="Donusturulecek deger">
+
+            <label for="fromUnit">Kaynak Birim</label>
+            <select id="fromUnit">
+                <option value="C">Celsius (C)</option>
+                <option value="F">Fahrenheit (F)</option>
+                <option value="K">Kelvin (K)</option>
+            </select>
+
+            <label for="toUnit">Hedef Birim</label>
+            <select id="toUnit">
+                <option value="F">Fahrenheit (F)</option>
+                <option value="C">Celsius (C)</option>
+                <option value="K">Kelvin (K)</option>
+            </select>
+
+            <button type="button" id="donusturBtn">Donustur</button>
+            <div class="result" id="donusumSonucu">Henuz donusum yapilmadi.</div>
+        </section>
+    </main>
+
+    <script src="hafta6-uyg2.js"></script>
+</body>
+</html>

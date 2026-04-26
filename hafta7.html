@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechConf 2025 – Etkinlik Kayıt</title>
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <!-- Özel CSS -->
+  <link rel="stylesheet" href="styles/hafta7.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar navbar-expand-lg sticky-top" id="mainNavbar">
+    <div class="container">
+      <a class="navbar-brand fw-bold" href="index.html">
+        <i class="bi bi-arrow-left me-2"></i>Ana Sayfa
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+          <li class="nav-item"><a class="nav-link" href="#hakkinda">Etkinlik</a></li>
+          <li class="nav-item"><a class="nav-link" href="#konusmacilar">Konuşmacılar</a></li>
+          <li class="nav-item"><a class="nav-link" href="#kayit">Kayıt</a></li>
+          <li class="nav-item ms-lg-2">
+            <button id="temaBtn" class="btn btn-sm btn-outline-tema" title="Temayı Değiştir">
+              <i class="bi bi-moon-stars-fill" id="temaIcon"></i>
+              <span id="temaLabel" class="ms-1">Koyu Mod</span>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <section class="hero-section" id="hero">
+    <div class="hero-bg-shape"></div>
+    <div class="container py-5">
+      <div class="row align-items-center min-vh-hero">
+        <div class="col-lg-7 order-lg-1 order-2">
+          <span class="badge badge-event mb-3">26–27 Eylül 2025 · İstanbul</span>
+          <h1 class="display-4 fw-extrabold lh-sm mb-4">
+            Teknolojinin<br/>
+            <span class="highlight-text">Geleceğini</span><br/>
+            Birlikte Keşfet
+          </h1>
+          <p class="lead text-body-secondary mb-5 pe-lg-5">
+            Siber güvenlik, yapay zeka ve yazılım mühendisliği alanlarında Türkiye'nin en büyük
+            öğrenci konferansı. 40+ konuşmacı, 12 workshop, sınırsız networking.
+          </p>
+          <div class="d-flex flex-wrap gap-3">
+            <a href="#kayit" class="btn btn-primary-custom btn-lg px-4">
+              <i class="bi bi-ticket-perforated me-2"></i>Şimdi Kayıt Ol
+            </a>
+            <a href="#hakkinda" class="btn btn-ghost-custom btn-lg px-4">
+              Daha Fazla <i class="bi bi-arrow-right ms-2"></i>
+            </a>
+          </div>
+          <div class="d-flex gap-4 mt-5 stats-row">
+            <div><span class="stat-number">1.200+</span><br/><small class="text-muted">Katılımcı</small></div>
+            <div class="stat-divider"></div>
+            <div><span class="stat-number">40+</span><br/><small class="text-muted">Konuşmacı</small></div>
+            <div class="stat-divider"></div>
+            <div><span class="stat-number">12</span><br/><small class="text-muted">Workshop</small></div>
+          </div>
+        </div>
+        <div class="col-lg-5 order-lg-2 order-1 mb-4 mb-lg-0 text-center">
+          <div class="hero-visual">
+            <div class="orb orb-1"></div>
+            <div class="orb orb-2"></div>
+            <div class="orb orb-3"></div>
+            <div class="hero-icon-wrap">
+              <i class="bi bi-cpu hero-icon"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== ETKİNLİK HAKKINDA ========== -->
+  <section class="section-pad" id="hakkinda">
+    <div class="container">
+      <div class="section-label">Neden TechConf?</div>
+      <h2 class="section-title mb-5">Üç Ana Parça</h2>
+      <div class="row g-4">
+
+        <!-- Kart 1 -->
+        <div class="col-md-4">
+          <div class="card card-custom h-100">
+            <div class="card-body p-4">
+              <div class="card-icon-wrap mb-3">
+                <i class="bi bi-shield-lock card-icon"></i>
+              </div>
+              <h5 class="card-title fw-semibold">Siber Güvenlik Zirvesi</h5>
+              <p class="card-text text-body-secondary">
+                Penetration testing, SOC operasyonları ve tehdit istihbaratı üzerine
+                derinlemesine teknik oturumlar. Gerçek vaka analizleri ile öğren.
+              </p>
+              <ul class="list-unstyled mt-3 feature-list">
+                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Red Team / Blue Team</li>
+                <li><i class="bi bi-check2-circle me-2 text-accent"></i>SIEM & Log Analizi</li>
+                <li><i class="bi bi-check2-circle me-2 text-accent"></i>CTF Yarışması</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kart 2 -->
+        <div class="col-md-4">
+          <div class="card card-custom card-featured h-100">
+            <div class="card-body p-4">
+              <span class="badge badge-featured mb-2">Öne Çıkan</span>
+              <div class="card-icon-wrap mb-3">
+                <i class="bi bi-robot card-icon"></i>
+              </div>
+              <h5 class="card-title fw-semibold">Yapay Zeka Atölyesi</h5>
+              <p class="card-text text-body-secondary">
+                LLM'ler, otonom sistemler ve ML Ops konularında hands-on workshop'lar.
+                Kendi AI uygulamanı sıfırdan geliştir.
+              </p>
+              <ul class="list-unstyled mt-3 feature-list">
+                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Prompt Engineering</li>
+                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Fine-tuning Uygulaması</li>
+                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Hackathon (24 saat)</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Kart 3 -->
+        <div class="col-md-4">
+          <div class="card card-custom h-100">
+            <div class="card-body p-4">
+              <div class="card-icon-wrap mb-3">
+                <i class="bi bi-code-slash card-icon"></i>
+              </div>
+              <h5 class="card-title fw-semibold">Yazılım Mühendisliği</h5>
+              <p class="card-text text-body-secondary">
+                Sistem tasarımı, dağıtık mimariler ve DevSecOps pratikleri üzerine
+                endüstri liderlerinden kariyere yönelik içerikler.
+              </p>
+              <ul class="list-unstyled mt-3 feature-list">
+                <li><i class="bi bi-check2-circle me-2 text-accent"></i>System Design</li>
+                <li><i class="bi bi-check2-circle me-2 text-accent"></i>Open Source Katkısı</li>
+                <li><i class="bi bi-check2-circle me-2 text-accent"></i>CV & Interview Clinic</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KONUŞMACILAR ========== -->
+  <section class="section-pad bg-section" id="konusmacilar">
+    <div class="container">
+      <div class="section-label">Kimler Konuşuyor?</div>
+      <h2 class="section-title mb-5">Öne Çıkan Konuşmacılar</h2>
+      <div class="row g-4">
+        <div class="col-sm-6 col-lg-3">
+          <div class="card card-speaker text-center h-100">
+            <div class="card-body p-4">
+              <div class="speaker-avatar mb-3"><i class="bi bi-person-fill"></i></div>
+              <h6 class="fw-semibold mb-1">Dr. Ayşe Kara</h6>
+              <small class="text-accent d-block mb-2">Baş Güvenlik Araştırmacısı</small>
+              <small class="text-muted">TUBITAK BİLGEM</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card card-speaker text-center h-100">
+            <div class="card-body p-4">
+              <div class="speaker-avatar mb-3"><i class="bi bi-person-fill"></i></div>
+              <h6 class="fw-semibold mb-1">Mehmet Yılmaz</h6>
+              <small class="text-accent d-block mb-2">AI Engineer</small>
+              <small class="text-muted">Google DeepMind</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card card-speaker text-center h-100">
+            <div class="card-body p-4">
+              <div class="speaker-avatar mb-3"><i class="bi bi-person-fill"></i></div>
+              <h6 class="fw-semibold mb-1">Zeynep Öztürk</h6>
+              <small class="text-accent d-block mb-2">SOC Lead</small>
+              <small class="text-muted">Microsoft Türkiye</small>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6 col-lg-3">
+          <div class="card card-speaker text-center h-100">
+            <div class="card-body p-4">
+              <div class="speaker-avatar mb-3"><i class="bi bi-person-fill"></i></div>
+              <h6 class="fw-semibold mb-1">Burak Arslan</h6>
+              <small class="text-accent d-block mb-2">Platform Engineer</small>
+              <small class="text-muted">Cloudflare</small>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== KAYIT FORMU ========== -->
+  <section class="section-pad" id="kayit">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="section-label text-center">Başvur</div>
+          <h2 class="section-title text-center mb-2">Yerinizi Ayırtın</h2>
+          <p class="text-center text-muted mb-5">Kontenjanlar sınırlıdır. Kayıt ücretsizdir.</p>
+
+          <!-- Uyarı alanı -->
+          <div id="uyariAlani" class="alert alert-warning d-none align-items-center gap-2 mb-4" role="alert">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <span id="uyariMetni"></span>
+          </div>
+
+          <div class="card card-form shadow-sm">
+            <div class="card-body p-4 p-lg-5">
+              <form id="kayitFormu" novalidate>
+                <div class="row g-3">
+                  <div class="col-sm-6">
+                    <label for="ad" class="form-label">Ad</label>
+                    <input type="text" class="form-control" id="ad" placeholder="Buğra" />
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="soyad" class="form-label">Soyad</label>
+                    <input type="text" class="form-control" id="soyad" placeholder="Alpaslan" />
+                  </div>
+                  <div class="col-12">
+                    <label for="eposta" class="form-label">E-posta</label>
+                    <input type="email" class="form-control" id="eposta" placeholder="ornek@mail.com" />
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="universite" class="form-label">Üniversite</label>
+                    <input type="text" class="form-control" id="universite" placeholder="Marmara Üniversitesi" />
+                  </div>
+                  <div class="col-sm-6">
+                    <label for="bolum" class="form-label">Bölüm / Yıl</label>
+                    <input type="text" class="form-control" id="bolum" placeholder="Bilgisayar Mühendisliği – 3" />
+                  </div>
+                  <div class="col-12">
+                    <label for="kategori" class="form-label">İlgilendiğiniz Alan</label>
+                    <select class="form-select" id="kategori">
+                      <option value="">Seçiniz…</option>
+                      <option value="siber">Siber Güvenlik Zirvesi</option>
+                      <option value="ai">Yapay Zeka Atölyesi</option>
+                      <option value="yazilim">Yazılım Mühendisliği</option>
+                      <option value="hepsi">Hepsine Katılmak İstiyorum</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label for="biyografi" class="form-label">Kendinizi Kısaca Tanıtın <small class="text-muted">(isteğe bağlı)</small></label>
+                    <textarea class="form-control" id="biyografi" rows="3" placeholder="Neden katılmak istiyorsunuz?"></textarea>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="kvkk" />
+                      <label class="form-check-label" for="kvkk">
+                        KVKK kapsamında kişisel verilerimin işlenmesine onay veriyorum.
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-2">
+                    <button type="submit" class="btn btn-primary-custom w-100 py-3">
+                      <i class="bi bi-send me-2"></i>Başvuruyu Tamamla
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Sonuç alanı -->
+          <div id="sonucAlani" class="d-none mt-4"></div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer-section">
+    <div class="container">
+      <div class="row align-items-center py-4">
+        <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+          <span class="fw-semibold">TechConf 2025</span>
+          <span class="text-muted ms-2">· Hafta 7 Lab Ödevi</span>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <a href="index.html" class="text-decoration-none text-muted me-3">
+            <i class="bi bi-house me-1"></i>Ana Sayfa
+          </a>
+          <a href="https://github.com/BugraAlpaslan" target="_blank" class="text-decoration-none text-muted">
+            <i class="bi bi-github me-1"></i>GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Özel JS -->
+  <script src="scripts/hafta7.js"></script>
+</body>
+</html>
